@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import foodsData from "../foods.json";
 import { Card, Row, Col, Divider, Input, Button } from "antd";
 
-export default function FoodBox() {
+export default function FoodBox(props) {
+    
   return (
     <>
-      {foodsData.map((food) => {
+      {props.data.map((food) => {
         return (
           <Col>
          
