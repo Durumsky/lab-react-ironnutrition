@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Card, Row, Col, Divider, Input, Button } from "antd";
-import FoodBox from "./FoodBox";
+
 
 export default function AddFood(props) {
 
@@ -35,7 +35,8 @@ export default function AddFood(props) {
           <b>Add Food Entry</b>
         </h3>
       </Divider>
-      <form onSubmit={handleSubmit}>
+      <div style={{display: 'flex', justifyContent: 'center'}}>
+      <form onSubmit={handleSubmit} style={{width: 800, display: 'flex', justifyContent: 'center', flexDirection: 'column'}}>
         <label>Name</label>
         <Input
           type="text"
@@ -68,8 +69,9 @@ export default function AddFood(props) {
           placeholder="Add servings here"
         />
 
-        <button type="submit">Add food</button>
+        <button style={{marginTop: 25}} type="submit">Add food</button>
       </form>
+      </div>
     </>
   );
 }

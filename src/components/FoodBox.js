@@ -1,30 +1,29 @@
 import React, { useState } from "react";
 import { Card, Row, Col, Divider, Input, Button } from "antd";
 
-export default function FoodBox(props) {
+export default function FoodBox({foods, deleteFood}) {
+
     
   return (
-    <>
-      {props.data.map((food) => {
-        return (
+ 
+      
           <Col>
          
             <Card
-            key={food._id}
-            title={food.name}
+            key={foods._id}
+            title={foods.name}
             style={{ width: 230, height: 300, margin: 10 }}
             >
-              <img src={food.image} height={60} />
-              <p>Calories: {food.calories}</p>
-              <p>Servings: {food.servings}</p>
+              <img src={foods.image} height={60} />
+              <p>Calories: {foods.calories}</p>
+              <p>Servings: {foods.servings}</p>
               <p>
-                <b>Total Calories:</b> {food.calories * food.servings}  kcal
+                <b>Total Calories:</b> {foods.calories * foods.servings}  kcal
               </p>
-              <Button type="primary"> Delete </Button>
+              <Button type="primary" onClick={() => deleteFood(foods.name)}> Delete </Button>
             </Card>
           </Col>
-        );
-      })}
-    </>
+       
+  
   );
 }
